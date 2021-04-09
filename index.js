@@ -7,14 +7,14 @@ const colors = [
   '#795548',
 ];
 
-let timerId = null;
+let intervalId = null;
 
 const body = document.querySelector('body');
 const startButton = document.querySelector('button[data-action="start"]');
 const stopButton = document.querySelector('button[data-action="stop"]');
 
 startButton.addEventListener('click', () => {
-  timerId = setInterval(() => {
+  intervalId = setInterval(() => {
     changeBodyBackgroundColor();
   }, 1000);
   startButton.setAttribute('disabled', 'disabled');
@@ -22,7 +22,7 @@ startButton.addEventListener('click', () => {
 console.log(startButton);
 
 stopButton.addEventListener('click', () => {
-  clearInterval(timerId);
+  clearInterval(intervalId);
   startButton.removeAttribute('disabled');
 });
 console.log(stopButton);
